@@ -1,0 +1,28 @@
+@import 'styles/font.scss';
+@import 'styles/color.scss';
+
+.step-1 {
+	.title {
+		@include title-2;
+		background: $color-2;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		padding-bottom: 55px;
+		text-align: center;
+	}
+
+	.form-container {
+		padding-bottom: 20px;
+		input {
+			margin-bottom: 20px;
+		}
+	}
+
+	.common-part {
+		padding-bottom: 40px;
+	}
+
+	.validation-btn {
+		width: 100%;
+	}
+}

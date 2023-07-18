@@ -1,0 +1,54 @@
+@import "./other.scss";
+
+/* Text mixin list */
+@mixin text-1 {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 400;
+	@media (max-width: $mobile-width) {
+		font-size: 16px;
+	}
+}
+
+@mixin text-2 {
+	font-family: 'All Round Gothic';
+	font-size: 16px;
+	font-weight: 400;
+}
+
+@mixin text-3 {
+	font-family: 'All Round Gothic';
+	font-size: 20px;
+	font-weight: 400;
+}
+
+@mixin text-4 {
+	font-family: 'All Round Gothic';
+	font-size: 24px;
+	font-weight: 400;
+}
+
+@mixin text-5 {
+	font-family: 'Roboto';
+	font-size: 12px;
+	font-weight: 400;
+}
+
+/* Title mixin list */
+@mixin title-1 {
+	font-family: 'All Round Gothic';
+	font-size: 72px;
+	font-weight: 400;
+	@media (max-width: $mobile-width) {
+		font-size: 46px;
+	}
+}
+
+@mixin title-2 {
+	font-family: 'All Round Gothic';
+	font-size: 42px;
+	font-weight: 400;
+	@media (max-width: $mobile-width) {
+		font-size: 24px;
+	}
+}

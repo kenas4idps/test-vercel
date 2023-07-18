@@ -1,0 +1,102 @@
+@import 'styles/color.scss';
+@import 'styles/font.scss';
+
+.custom-dropdown {
+	@include text-2;
+	width: 100%;
+
+	.label {
+		display: block;
+		padding-bottom: 10px;
+	}
+
+	.custom-inpt {
+		position: relative;
+		border-radius: 20px;
+		width: calc(100% - 40px);
+		border: 2px solid #E4E4E4;
+		padding: 20px;
+		@include text-2;
+		background: $color-3;
+		cursor: pointer;
+		&.empty {
+			color: $color-7;
+		}
+
+		&.with-icon {
+			background-position: 16px center;
+			background-size: 18px;
+			background-repeat: no-repeat;
+			padding-left: 55px;
+			width: calc(100% - 75px);
+		}
+
+		&:before, &:after {
+			content: "";
+			transition: 0.5s;
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			width: 8px;
+			height: 2px;
+			background-color: $color-4;
+			transform: translate(0, -50%) rotate(45deg) ;
+		}
+
+		&:after {
+			right: 15px;
+			transform: translate(0, -50%) rotate(-45deg) ;
+		}
+
+		.dropdown-menu {
+			color: $color-1;
+			list-style-type: none;
+			padding: 0;
+			display: none;
+			position: absolute;
+			top: calc(100% - 1px);
+			left: -1px;
+			background: $color-3;
+			width: 100%;
+			flex-direction: column;
+			margin: 0px;
+			border: 2px solid $color-4;
+			border-radius: 0 0 20px 20px;
+			border-top: none;
+			overflow: hidden;
+			li {
+				text-align: center;
+				padding: 10px;
+				&:hover {
+					background: $color-2;
+					color: $color-3;
+				}
+			}
+		}
+
+		&.is-open {
+			border-radius: 20px 20px 0 0;
+			border: 2px solid $color-4;
+			border-bottom: none;
+			.dropdown-menu {
+				display: flex;
+			}
+			&:before, &:after {
+				content: "";
+				transition: 0.5s;
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				width: 8px;
+				height: 2px;
+				background-color: $color-4;
+				transform: translate(0, -50%) rotate(-45deg) ;
+			}
+	
+			&:after {
+				right: 15px;
+				transform: translate(0, -50%) rotate(45deg) ;
+			}
+		}
+	}
+}

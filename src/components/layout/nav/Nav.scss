@@ -1,0 +1,141 @@
+@import 'styles/color.scss';
+@import 'styles/other.scss';
+@import 'styles/font.scss';
+
+$padding-nav: 50px;
+$padding-nav-mobile: 30px;
+
+$height-menu-mobile: 100px;
+
+.main-nav {
+	position: absolute; //pass to fixed to keep the menu on scroll
+	display: flex;
+	top: 0;
+	z-index: 100;
+	width: calc(100% - $padding-nav - $padding-nav);
+	align-items: center;
+	justify-content: space-between;
+	padding: $padding-nav;
+	@include text-2;
+	z-index: 100;
+	.logo {
+		cursor: pointer;
+		.logo-desktop {
+			width: 165px;
+		}
+
+		.logo-mobile {
+			display: none;
+		}
+	}
+
+	.menu-container {
+		.btn-mobile-menu {
+			display: none;
+		}
+
+		.main-pages-list {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			@include text-2;
+			.main-page {
+				padding-right: 30px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+				&.current-page, &:hover {
+					.page-link {
+						background: $color-2;
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $mobile-width) {
+		width: calc(100% - $padding-nav-mobile - $padding-nav-mobile);
+		padding: $padding-nav-mobile;
+		height: calc($height-menu-mobile - $padding-nav-mobile - $padding-nav-mobile);
+		.logo {
+			.logo-desktop {
+				width: 165px;
+				display: none;
+			}
+	
+			.logo-mobile {
+				display: block;
+				width: 38px;
+			}
+		}
+
+		.menu-container {
+			&.open {
+				.main-pages-list {
+					width: 50%;
+				}
+
+				.btn-mobile-menu {
+					transform: rotate(45deg);
+					&:after {
+						top: 0;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate(90deg);
+					}
+				}
+			}
+
+			.btn-mobile-menu {
+				display: block;
+				height: 3px;
+				width: 12px;
+				background-color: $color-1;
+				border-radius: 20px;
+				position: relative;
+				transition: 0.5s;
+				&:before, &:after {
+					content: '';
+					display: block;
+					height: 3px;
+					width: 15px;
+					background-color: $color-1;
+					position: absolute;
+					top: -5px;
+					left: 0;
+					border-radius: 20px;
+				}
+
+				&:after {
+					top: 5px;
+					left: 0;
+				}
+			}
+
+			.main-pages-list {
+				position: absolute;
+				display: flex;
+				transition: 0.5s;
+				top: 0px;
+				right:0;
+				width: 0;
+				height: 100vh;
+				overflow: hidden;
+				flex-direction: column;
+				background: $color-3;
+				align-items: flex-start;
+				padding: 50px 0;
+				.main-page {
+					padding-right: 0;
+					padding-bottom: 15px;
+					padding-left: 30px;
+				}
+			}
+		}
+	} 
+}

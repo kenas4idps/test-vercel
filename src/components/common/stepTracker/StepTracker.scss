@@ -1,0 +1,19 @@
+@import 'styles/color.scss';
+@import 'styles/font.scss';
+
+.step-tracker {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	.dot {
+		width: 13px;
+		height: 13px;
+		border: 2px solid #C4C4C4;
+		border-radius: 50%;
+		margin: 0 10px 0 10px;
+		&.current {
+			border: 2px solid #9D1FB0;
+			background-color: #9D1FB0;
+		}
+	}
+}

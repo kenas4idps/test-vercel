@@ -1,0 +1,63 @@
+<form id="wf-form-form-register" name="wf-form-form-register" data-name="form-register"
+    action="http://localhost:3000/data"
+     method="post" >
+    <table>
+        <tr>
+            <td>
+                <label for="organization" class="">Organization</label>
+                <input type="text" class=" w-input" maxlength="256" name="organization"
+                    data-name="organization" placeholder="Organization Name" id="organization" required=""  value="test4IDPS"/>
+            </td>
+            <td>
+                <label for="Contact-name" class="">Contact name</label>
+                <input type="text" class=" bg-2 w-input" maxlength="256"
+                    name="Contact-name" data-name="Contact name" placeholder="Your name" id="Contact-name"
+                    required="" value="4IDPS"/>
+            </td>
+
+            <td>
+                <label for="Position" class="">Position</label>
+                <input type="text" class=" bg-3 w-input" maxlength="256"
+                    name="Position" data-name="Position" placeholder="Your Position" id="Position" required="" value="taiwan"/>
+            </td>
+            <td>
+                <label for="Contact-Number" class="">Contact number</label>
+                <input type="tel" class=" bg-4 w-input" maxlength="256"
+                    name="Contact-Number" data-name="Contact Number" placeholder="00 000 000" id="Contact-Number"
+                    required="" value="0900000456"/>
+            </td>
+        </tr>
+        <td>
+            <label for="Email" class="">Email address</label>
+            <input type="email" class=" bg-5 w-input" maxlength="256" name="Email"
+                data-name="Email" placeholder="user@mail.com" id="Email" required=""  value="test@4idps.com"/>
+        </td>
+        <td>
+            <label for="User" class="">Telegram handle (optional)</label>
+            <input type="text" class=" bg-6 w-input" maxlength="256" name="User"
+                data-name="User" placeholder="@User" id="User" />
+        </td>
+        <td>
+            <label for="website" class="">Website URL</label>
+            <input type="text" class=" bg-7 url w-input" maxlength="256" name="website"
+                data-name="website" placeholder="Website" id="website" required="" value="www.google.com"/>
+        </td>
+        <td>
+            <label for="Contact-Number-2" class="">Community size</label>
+            <div data-delay="0" data-hover="false" fs-selectcustom-hideinitial="true" fs-selectcustom-element="dropdown"
+                class="dropdown-form--ist-b1 w-dropdown">
+                <nav class="dropdown-list-b1 w-dropdown-list">
+                    <select id="field-2" name="field-2" data-name="Field 2" class="select-field-b1 w-select">
+                        <option value="">Community size</option>
+                        <option value="0-5,000" selected>0-5,000</option>
+                        <option value="5,000 - 50,000">5,000 - 50,000</option>
+                        <option value="50,000 - 1M">50,000 - 1M</option>
+                        <option value="5M+">5M+</option>
+                    </select>
+                </nav>
+        </td>
+        </tr>
+    </table>
+    <input type="submit" value="SEND"  />
+
+</form>

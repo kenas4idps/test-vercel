@@ -1,0 +1,36 @@
+@import 'styles/color.scss';
+@import 'styles/font.scss';
+
+.btn {
+	padding: 20px 40px;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	@include text-3;
+	&.custom-1{
+		background: $color-2;
+		color: $color-3;
+		&:hover:not(.inactive) {
+			background: $color-5;
+		}
+
+		&.inactive {
+			opacity: 0.3;
+			cursor: default;
+		}
+	}
+
+	&.custom-2 {
+		color: #7B7B7B;
+		border: 2px solid #7B7B7B;
+		background: transparent;
+		&:hover {
+			border: 2px solid $color-6;
+			color: $color-6;
+		}
+	}
+
+	@media (max-width: $mobile-width) {
+		padding: 15px 10px;
+	}
+}

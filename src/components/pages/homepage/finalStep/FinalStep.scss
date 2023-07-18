@@ -1,0 +1,30 @@
+@import 'styles/font.scss';
+@import 'styles/color.scss';
+
+.final-step {
+	.logo {
+		display: block;
+		width: 130px;
+		margin: auto;
+		padding-bottom: 40px;
+	}
+
+	.title {
+		@include title-2;
+		padding-bottom: 22px;
+		text-align: center;
+	}
+
+	.subtitle {
+		@include text-4;
+		background: $color-2;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-align: center;
+		padding-bottom: 70px;
+	}
+
+	.thank-you-btn {
+		width: 100%;
+	}
+}
