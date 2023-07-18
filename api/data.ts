@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "POST") {
     // Process a POST request
     // get request data
@@ -11,18 +11,14 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
 
     // save data to cooki e
     // so later in the component we can grab the data from cookie by the cookie key
-    // res.setHeader("Set-Cookie", [`nuvo_form_data=${JSON.stringify(data)}`]);
-
-    // parse to JWT + secret key
+    res.setHeader("Set-Cookie", [
+      // `nuvo_form_data=${JSON.stringify(data)}`,
+      "cookie_1=world",
+      "cookie_2=hello",
+    ]);
 
     // redirect to home form
-    // pass token string in url params
-    res
-      .setHeader("Set-Cookie", [
-        `nuvo_form_data=${JSON.stringify(data)}; SameSite=None; Secure`,
-        `test=hello_world; SameSite=None; Secure`,
-      ])
-      .redirect(302, `/?token=asdf`);
+    res.redirect(302, `/`);
   } else {
     // Handle any other HTTP method
     // redirect to home form
