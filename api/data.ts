@@ -22,7 +22,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
         `nuvo_form_data=${JSON.stringify(data)}; SameSite=None; Secure`,
         `test=hello_world; SameSite=None; Secure`,
       ])
-      .redirect(302, `/?token=${JSON.stringify(data)}`);
+      .redirect(302, `/?token=asdf`);
   } else {
     // Handle any other HTTP method
     // redirect to home form
