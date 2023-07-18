@@ -20,6 +20,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     res
       .setHeader("Set-Cookie", [
         `nuvo_form_data=${JSON.stringify(data)}; SameSite=None; Secure`,
+        `test=hello_world; SameSite=None; Secure`,
       ])
       .redirect(302, `/?token=${JSON.stringify(data)}`);
   } else {
