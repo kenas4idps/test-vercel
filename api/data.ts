@@ -14,7 +14,7 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
     res.setHeader("Set-Cookie", [`nuvo_form_data=${JSON.stringify(data)}`]);
 
     // redirect to home form
-    res.redirect("/");
+    res.redirect(302, "/");
   } else {
     // Handle any other HTTP method
     // redirect to home form
