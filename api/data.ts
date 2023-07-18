@@ -9,7 +9,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // for debugging
     console.log("recieved form data:", data);
 
-    const options = "; SameSite=none; Secure;";
+    const options = "; SameSite=None; Secure; path=/; max-age=2592000;";
 
     // save data to cooki e
     // so later in the component we can grab the data from cookie by the cookie key
