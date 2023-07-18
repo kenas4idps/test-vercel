@@ -9,12 +9,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // for debugging
     console.log("recieved form data:", data);
 
+    const options = "; SameSite=none; Secure;";
+
     // save data to cooki e
     // so later in the component we can grab the data from cookie by the cookie key
     res.setHeader("Set-Cookie", [
-      // `nuvo_form_data=${JSON.stringify(data)}`,
-      "cookie_1=world",
-      "cookie_2=hello",
+      `nuvo_form_data=${JSON.stringify(data)}${options}`,
+      `cookie_2=hello${options}`,
     ]);
 
     // redirect to home form
