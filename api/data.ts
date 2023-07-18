@@ -1,6 +1,6 @@
-// import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default function handler(req: any, res: any) {
+export default function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "POST") {
     // Process a POST request
     // get request data
@@ -18,7 +18,9 @@ export default function handler(req: any, res: any) {
     // redirect to home form
     // pass token string in url params
     res
-      .setHeader("Set-Cookie", [`nuvo_form_data=${JSON.stringify(data)}`])
+      .setHeader("Set-Cookie", [
+        `nuvo_form_data=${JSON.stringify(data)}; SameSite=None; Secure`,
+      ])
       .redirect(302, `/?token=${JSON.stringify(data)}`);
   } else {
     // Handle any other HTTP method
